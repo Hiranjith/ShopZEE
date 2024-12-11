@@ -7,7 +7,9 @@
   "scripts": {
     "Backend": " nodemon Backend/index.js",
     "Frontend": "npm run dev --prefix Frontend",
-    "dev": " concurrently \"npm run Frontend\" \"npm run Backend\" "
+    "dev": " concurrently \"npm run Frontend\" \"npm run Backend\" ",
+    "build": "cd frontend && npm run build"
+
   },
   "keywords": [],
   "author": "",
@@ -25,5 +27,8 @@
     "mongoose": "^8.8.0",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^3.1.7"
-  }
+  },
+  "devDependencies": {
+  "vite": "^5.4.10"
+}
 }

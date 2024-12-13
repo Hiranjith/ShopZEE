@@ -8,7 +8,8 @@
     "Backend": " nodemon Backend/index.js",
     "Frontend": "npm run dev --prefix Frontend",
     "dev": " concurrently \"npm run Frontend\" \"npm run Backend\" ",
-    "build": "cd frontend && npm run build"
+    "build": "cd frontend && npm run build",
+    "start": "node Backend/index.js"
 
   },
   "keywords": [],

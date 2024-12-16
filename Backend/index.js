@@ -26,7 +26,7 @@ app.use(cookieParser())
 // Allow requests from the frontend during development
 const allowedOrigins = [
     'http://127.0.0.1:5173', // Dev frontend
-    'https://shop-zee-git-main-hiranjiths-projects.vercel.app/', // Production frontend
+    'https://shop-zee-git-main-hiranjiths-projects.vercel.app', // Production frontend
   ];
   
   app.use(

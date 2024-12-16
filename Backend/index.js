@@ -10,6 +10,8 @@ import categoryRoutes from './routes/categoryRoutes.js'
 import productRoutes from './routes/productRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 import orderRoutes from './routes/orderRoutes.js'
+import cors from 'cors';
+
 
 dotenv.config()
 const port = process.env.PORT || 5000;
@@ -20,6 +22,27 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 app.use(cookieParser())
+
+// Allow requests from the frontend during development
+const allowedOrigins = [
+    'http://127.0.0.1:5173', // Local frontend
+    'https://your-production-frontend.com', // Production frontend
+  ];
+  
+  app.use(
+    cors({
+      origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+          callback(null, true);
+        } else {
+          callback(new Error('Not allowed by CORS'));
+        }
+      },
+      credentials: true,
+    })
+  );
+  
+
 
 app.get('/', (req, res) => {
     res.send('Welcome to the ShopZEE API');

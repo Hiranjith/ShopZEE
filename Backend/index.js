@@ -18,10 +18,13 @@ const port = process.env.PORT || 5000;
 
 connectDB();
 
+const app = express();
+
 // Allow requests from the frontend during development
 const allowedOrigins = [
   'http://127.0.0.1:5173', // Dev frontend
   'https://shop-zee-nine.vercel.app', // Production frontend
+  'https://shop-zee-git-main-hiranjiths-projects.vercel.app', //secondary production frontend
 ];
 
 app.use(
@@ -37,7 +40,6 @@ app.use(
   })
 );
 
-const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 app.use(cookieParser())

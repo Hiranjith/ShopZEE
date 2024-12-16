@@ -18,29 +18,31 @@ const port = process.env.PORT || 5000;
 
 connectDB();
 
+// Allow requests from the frontend during development
+const allowedOrigins = [
+  'http://127.0.0.1:5173', // Dev frontend
+  'https://shop-zee-nine.vercel.app', // Production frontend
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true,
+  })
+);
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 app.use(cookieParser())
 
-// Allow requests from the frontend during development
-const allowedOrigins = [
-    'http://127.0.0.1:5173', // Dev frontend
-    'https://shop-zee-git-main-hiranjiths-projects.vercel.app', // Production frontend
-  ];
-  
-  app.use(
-    cors({
-      origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-          callback(null, true);
-        } else {
-          callback(new Error('Not allowed by CORS'));
-        }
-      },
-      credentials: true,
-    })
-  );
+
   
 
 

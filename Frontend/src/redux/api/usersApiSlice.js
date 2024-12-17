@@ -31,7 +31,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
                 url: `${USERS_URL}/profile`,
                 method: 'PUT',
                 body: data,
-                credentials: 'include',
+                //credentials: 'include',
             }),
         }),
 
@@ -55,7 +55,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
                 url: `${USERS_URL}/${data.userId}`,
                 method: 'PUT',
                 body: data,
-                credentials: 'include',
+                //credentials: 'include',
             }),
             invalidatesTags: ['User'],
         }),

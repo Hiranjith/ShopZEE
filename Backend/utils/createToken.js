@@ -7,15 +7,18 @@ const generateToken = (res, userID) =>{
 
     
 //set JWT as an HTTP-ONLY cookie
+const isProduction = process.env.NODE_ENV === 'production';
 
 res.cookie('jwt', token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV || 'development',
-    sameSite: 'strict',
+    secure: isProduction, // Secure in production, not in development
+    sameSite: isProduction ? 'None' : 'Lax',
     maxAge: 30*24*60*60*1000,
 
 })
 
+    console.log('Cookie set:', res.getHeader('Set-Cookie'));
+    res.status(200).json({ message: 'Cookie set successfully' });
     return token;
 }
 

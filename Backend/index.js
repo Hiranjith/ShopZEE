@@ -30,6 +30,7 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
+      console.log('Request origin:', origin); // Log the origin for debugging
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {

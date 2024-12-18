@@ -38,14 +38,13 @@ app.use(
       }
     },
     credentials: true, // This ensures cookies or auth headers are allowed
-    // methods: 'GET,POST,PUT,DELETE,OPTIONS', // Specify allowed methods
-    // allowedHeaders: 'Content-Type,Authorization', // Explicitly list allowed headers
+    methods: 'GET,POST,PUT,DELETE,OPTIONS', // Specify allowed methods
+    allowedHeaders: 'Content-Type,Authorization', // Explicitly list allowed headers
   })
 );
-
+app.use(cookieParser())
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
-app.use(cookieParser())
 
 
   
@@ -54,6 +53,12 @@ app.use(cookieParser())
 app.get('/', (req, res) => {
     res.send('Welcome to the ShopZEE API');
   });
+
+app.get('/api/debug/cookies', (req, res) => {
+    console.log('Cookies:', req.cookies);
+    res.json(req.cookies);
+  });
+  
   
 app.use('/api/users', userRoutes)
 app.use('/api/category', categoryRoutes)

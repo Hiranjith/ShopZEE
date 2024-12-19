@@ -8,6 +8,7 @@ export const productApiSlice = apiSlice.injectEndpoints({
                 url: `${PRODUCT_URL}`,
                 method: 'POST',
                 body: data,
+                credentials: 'include',
             }),
             invalidatesTags: ['CategoryProduct']
         }),
@@ -17,6 +18,7 @@ export const productApiSlice = apiSlice.injectEndpoints({
                 url: `${PRODUCT_URL}/${productId}`,
                 method: 'PUT',
                 body: formData,
+                credentials: 'include',
             }),
         }),
 
@@ -48,6 +50,7 @@ export const productApiSlice = apiSlice.injectEndpoints({
             query: (productId) =>  ({
                 url: `${PRODUCT_URL}/${productId}`,
                 method: 'DELETE',
+                credentials: 'include',
             }),
             providesTags: ['Product'],
         }),
@@ -57,6 +60,7 @@ export const productApiSlice = apiSlice.injectEndpoints({
                 url: `${PRODUCT_URL}/${data.productId}/addReview`,
                 method: 'POST',
                 body: data,
+                credentials: 'include',
             }),
         }),
 

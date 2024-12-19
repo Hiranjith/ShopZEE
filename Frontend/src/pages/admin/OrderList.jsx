@@ -45,7 +45,7 @@ const Orderlist = () => {
                                              className="w-16 h-16 object-cover rounded-lg" />
                                     </td>
                                     <td className="py-4 px-6">{order._id.substring(14)}</td>
-                                    <td className="py-4 px-6">{order.user.username}</td>
+                                    <td className="py-4 px-6">{order.user?.username}</td>
                                     <td className="py-4 px-6">₹ {order.totalPrice}</td>
                                     <td className="py-4 px-6">{order.createdAt.substring(0, 10)}</td>
                                     <td className="py-4 px-6">

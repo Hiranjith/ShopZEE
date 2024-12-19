@@ -40,10 +40,10 @@ export const userApiSlice = apiSlice.injectEndpoints({
         getUsers: builder.query({
             query:() => ({
                 url: USERS_URL,
+                credentials: 'include',
             }),
             providesTags: ['User'],
             keepUnusedDataFor: 5,
-            credentials: 'include',
         }),
 
         deleteUser: builder.mutation({

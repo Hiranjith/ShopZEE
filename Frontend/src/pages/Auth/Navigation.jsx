@@ -62,7 +62,7 @@ function Navigation() {
       <div className="w-full bg-gray-800 text-white p-4 flex justify-between items-center fixed top-0 right-0 z-50">
           <div className="flex items-center ml-[6rem]">
               <Link to="/" className="text-2xl font-bold mr-4 flex items-center">
-                  <img src='/uploads\\logo.png' alt="Shopzee Logo" className="h-full w-12 mr-2" />
+                  {/*<img src='/uploads\\logo.png' alt="Shopzee Logo" className="h-full w-12 mr-2" /> */}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6FE3E3] via-[#4AB3E3] to-[#1A8FE3]">ShopZEE</span>
               </Link>
               {/* <Link to="/about" className="mr-4 hover:underline">

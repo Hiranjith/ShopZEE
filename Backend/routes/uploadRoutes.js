@@ -1,51 +1,47 @@
 import express from "express";
-import path from 'path';
 import multer from "multer";
+import s3 from '../config/s3.js'; 
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const router = express.Router();
 
-const storage = multer.diskStorage({
+const storage = multer.memoryStorage(); // Store the file in memory before uploading to S3
 
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/');
-    },
+const upload = multer({ storage }); // Use the memoryStorage for multer
 
-    filename: (req, file, cb) => {
 
-        const extname = path.extname(file.originalname);
-        cb(null, `${file.fieldname}-${Date.now()}${extname}`)
+router.post('/', upload.single('image'), async (req, res) => {
+    const file = req.file;
+  
+    if (!file) {
+      return res.status(400).json({ message: 'No file uploaded.' });
     }
-})
-
-
-const fileFilter = (req, file, cb)  => {
-
-    const fileTypes = /jpe?g|png|webp/
-    const extname = path.extname(file.originalname).toLowerCase();
-
-    const mimeTypes = /image\/jpe?g|image\/png|image\/webp/
-    const mimeType = file.mimetype;
-
-    if (fileTypes.test(extname) && mimeTypes.test(mimeType)) {
-        cb(null, true)
-    } else {
-        cb(new Error("Images only"), false);        
+  
+    // Set parameters for the S3 upload
+    const params = {
+      Bucket: process.env.AWS_BUCKET_NAME, // Bucket name from .env
+      Key: `uploads/${Date.now()}-${file.originalname}`, // Unique file name
+      Body: file.buffer, // File content
+      ContentType: file.mimetype, // File type
+      ACL: 'public-read', // Public access for the file
+    };
+  
+    try {
+      // Upload file to S3
+      const result = await s3.upload(params).promise();
+      console.log('File received:', file);
+      console.log('Uploading to S3 with params:', params);
+      // Return the public URL of the uploaded image
+      res.status(200).json({
+        message: 'Your image is uploaded',
+        image: result.Location, // Publicly accessible URL
+      });
+    } catch (error) {
+      console.error('Error uploading file to S3:', error);
+      res.status(500).json({ message: 'Error uploading file.' });
     }
-}
-const upload = multer({storage, fileFilter})
-const uploadSingleImage = upload.single('image')
-
-router.post('/', uploadSingleImage, (req, res) => {
-    console.log("File:", req.file); // Check the uploaded file
-    if (req.file) {
-        res.status(200).json({
-            message: 'Image uploaded successfully',
-            image: `/${req.file.path}`,
-        });
-    } else {
-        res.status(400).json({ message: 'No image file uploaded' });
-    }
-});
-
-
-export default router;
+  });
+  
+  export default router;

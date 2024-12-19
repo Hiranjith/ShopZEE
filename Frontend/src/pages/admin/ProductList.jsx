@@ -25,6 +25,17 @@ const ProductList = () => {
     const {data: categories} = useGetAllCategoriesQuery();
 
     const uploadFileHandler = async (e) => {
+
+        // const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+        //     if (!allowedTypes.includes(file.type)) {
+        //         toast.error('Only JPEG and PNG images are allowed.');
+        //         return;
+        //     }
+
+        //     if (file.size > 5 * 1024 * 1024) { // 5MB limit
+        //         toast.error('File size exceeds 5MB.');
+        //         return;
+        //     }
         const formData = new FormData();
         formData.append('image', e.target.files[0]);
 
@@ -36,7 +47,7 @@ const ProductList = () => {
             setImageURL(res.image);
     
         } catch (error) {
-            toast.error(error?.data?.message);
+            toast.error(error?.data?.message || 'Error uploading image.');
         }
     }
 

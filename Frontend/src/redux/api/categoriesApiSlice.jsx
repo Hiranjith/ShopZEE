@@ -8,6 +8,7 @@ export const categoriesApiSlice = apiSlice.injectEndpoints({
                 url: `${CATEGORY_URL}`,
                 method: 'POST',
                 body: data,
+                credentials: 'include',
             }),
         }),
 
@@ -22,6 +23,7 @@ export const categoriesApiSlice = apiSlice.injectEndpoints({
                 url: `${CATEGORY_URL}/${data._id}`,
                 method: 'PUT',
                 body: data,
+                credentials: 'include',
             }),
         }),
 
@@ -29,6 +31,7 @@ export const categoriesApiSlice = apiSlice.injectEndpoints({
             query: (id) => ({
                 url: `${CATEGORY_URL}/${id}`,
                 method: 'DELETE',
+                credentials: 'include',
             }),
         }),
     }),

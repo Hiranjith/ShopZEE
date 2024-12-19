@@ -25,7 +25,7 @@ router.post('/', upload.single('image'), async (req, res) => {
       Key: `uploads/${Date.now()}-${file.originalname}`, // Unique file name
       Body: file.buffer, // File content
       ContentType: file.mimetype, // File type
-      ACL: 'public-read', // Public access for the file
+      ACL: 'bucket-owner-full-control', // Public access for the file
     };
   
     try {

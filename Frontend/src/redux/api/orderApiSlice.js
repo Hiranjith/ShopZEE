@@ -9,18 +9,21 @@ export const orderApiSlice = apiSlice.injectEndpoints({
                 url: `${ORDER_URL}`,
                 method: 'POST',
                 body: data,
+                credentials: 'include',
             }),
         }),
 
         getAllOrder: builder.query({
             query: () => ({
                 url: `${ORDER_URL}`,
+                credentials: 'include',
             }),
         }),
 
         getUserOrder: builder.query({
             query: () => ({
-                url: `${ORDER_URL}/my-orders`
+                url: `${ORDER_URL}/my-orders`,
+                credentials: 'include',
             }),
             keepUnusedDataFor: 5,
         }),
@@ -48,6 +51,7 @@ export const orderApiSlice = apiSlice.injectEndpoints({
                 url: `${ORDER_URL}/${id}/deliver`,
                 method: 'PUT',
                 body: data,
+                credentials: 'include',
             }),
         }),
 
@@ -60,6 +64,7 @@ export const orderApiSlice = apiSlice.injectEndpoints({
         getOrderDetails: builder.query({
             query: (id) => ({
               url: `${ORDER_URL}/${id}`,
+              credentials: 'include',
             }),
           }),
 
@@ -67,6 +72,7 @@ export const orderApiSlice = apiSlice.injectEndpoints({
             query: (id) => ({
                 url: `${ORDER_URL}/${id}`,
                 method: 'DELETE',
+                credentials: 'include',
             }),
           }),
 
@@ -75,6 +81,7 @@ export const orderApiSlice = apiSlice.injectEndpoints({
               url: `${ORDER_URL}/${orderId}/payed`,
               method: "PUT",
               body: details,
+              credentials: 'include',
             }),
           }),
     })

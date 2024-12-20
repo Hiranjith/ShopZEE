@@ -126,7 +126,7 @@ const removeProduct = asyncHandler(async(req, res) => {
 
 const fetchAllProducts = asyncHandler(async(req, res) => {
     try {
-        const products = await Product.find({}).populate('category').sort({createAt: -1}).limit(10)
+        const products = await Product.find({}).populate('category').sort({createAt: -1})
 
         if (products) {
             res.status(200).json(products);

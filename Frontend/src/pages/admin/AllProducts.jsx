@@ -19,7 +19,7 @@ const AllProducts = () => {
 
 
     return (
-        <div className="min-h-screen p-6 flex flex-col items-center bg-gray-200">
+        <div className="min-h-screen p-6 flex flex-col items-center bg-gray-200 mt-9">
             <AdminMenu />
             {/* Heading */}
             <h1 className="text-4xl font-bold text-center text-gray-800 mb-6">

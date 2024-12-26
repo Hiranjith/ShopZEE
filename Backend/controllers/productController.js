@@ -141,7 +141,7 @@ const fetchAllProducts = asyncHandler(async(req, res) => {
 
 const fetchProductsForPage = asyncHandler(async(req, res) => {
     try {
-        const pageSize = 9;
+        const pageSize = 16;
         const pageNumber = 1;
         const keyword = req.query.keyword ? 
         {

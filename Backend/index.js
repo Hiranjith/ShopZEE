@@ -3,6 +3,9 @@ import path from 'path'
 import cookieParser from 'cookie-parser'
 import express from 'express'
 import dotenv from 'dotenv'
+import swaggerUi from 'swagger-ui-express';
+import swaggerJSDoc from 'swagger-jsdoc';
+
 //utils
 import connectDB from './config/db.js'
 import userRoutes from './routes/userRoutes.js'
@@ -47,7 +50,22 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 
 
+  //swagger setup
+  const swaggerOptions = {
+    definition: {
+      openapi: '3.0.0',
+      info: {
+        title: 'ShopZEE API',
+        version: '1.0.0',
+        description: 'API documentation for the ShopZEE backend',
+      },
+      servers: [{ url: 'http://localhost:5000' }],
+    },
+    apis: ['./routes/*.js'],
+  };
   
+  const swaggerSpec = swaggerJSDoc(swaggerOptions);
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 app.get('/', (req, res) => {

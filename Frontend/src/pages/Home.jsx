@@ -12,7 +12,7 @@ import Product from './Products/Product';
 const Home = () => {
     // const {keyword} = useParams();
     // {keyword: keyword || ''}
-    const {data, isLoading, isError} = useGetPageProductsQuery()
+    const {data, isLoading, isError, error} = useGetPageProductsQuery()
 
 
 
@@ -27,7 +27,8 @@ const Home = () => {
             {
                 isLoading? (<Loader />) : isError? (
                     <Message variant="danger">
-                        {isError?.data.Message || isError.Message}
+                        {error?.data.Message || error.Message}
+
                     </Message>
                 ) : (
                     <>
@@ -58,5 +59,6 @@ const Home = () => {
         </>
     );
 }
+//{error?.data?.message || error?.message || 'Something went wrong'}
 
 export default Home;

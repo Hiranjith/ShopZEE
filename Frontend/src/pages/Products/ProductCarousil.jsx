@@ -53,13 +53,11 @@ const ProductCarousil = () => {
             >
               {products.slice(0,4).map(({ image, _id, name, price, description, brand, createdAt, numReviews, rating, quantity, countInStock }) => (
                 <div key={_id} className="flex flex-col">
-                  <Link to={`/product/${_id}`} className='block'>
                   <img
                     src={image}
                     alt={name}
                     className="w-full rounded-lg object-cover h-[20.8rem]"
                   />
-                  </Link>
                   <div className="mt-4 flex justify-between text-sm"> {/* Reduced font size */}
                     <div className="w-[12rem]"> 
                       <h2 className="text-base font-semibold">{name}</h2>

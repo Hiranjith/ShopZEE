@@ -5,11 +5,13 @@ const SmallProducts = ({ product }) => {
     return (
         <div className="w-56 mx-auto p-3 bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
             <div className="relative w-full">
+            <Link to={`/product/${product._id}`} className='block'>
                 <img
                     src={product.image}
                     alt={product.name}
                     className="h-36 w-full object-cover rounded-t-lg"
                 />
+            </Link>
                 <HeartIcon product={product} />
             </div>
             <div className="p-2 w-full text-center">

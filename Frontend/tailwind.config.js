@@ -8,6 +8,9 @@ export default {
       colors: {
         loginPageColor:  '#FDB4B4',
       },
+      fontFamily: {
+        fantasy: ['fantasy'],
+      },
     },
   },
   plugins: [],

@@ -19,6 +19,9 @@ import cors from 'cors';
 dotenv.config()
 const port = process.env.PORT || 5000;
 
+console.error("DEBUG CWD:", process.cwd());
+dotenv.config();
+console.error("DEBUG MONGO_URI:", process.env.MONGO_URI);
 connectDB();
 
 const app = express();
@@ -47,48 +50,48 @@ app.use(
 );
 app.use(cookieParser())
 app.use(express.json());
-app.use(express.urlencoded({extended : true}));
+app.use(express.urlencoded({ extended: true }));
 
 
-  //swagger setup
-  const swaggerOptions = {
-    definition: {
-      openapi: '3.0.0',
-      info: {
-        title: 'ShopZEE API',
-        version: '1.0.0',
-        description: 'API documentation for the ShopZEE backend',
-      },
-      servers: [{ url: 'http://localhost:5000' }],
+//swagger setup
+const swaggerOptions = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'ShopZEE API',
+      version: '1.0.0',
+      description: 'API documentation for the ShopZEE backend',
     },
-    apis: ['./routes/*.js'],
-  };
-  
-  const swaggerSpec = swaggerJSDoc(swaggerOptions);
-  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+    servers: [{ url: 'http://localhost:5000' }],
+  },
+  apis: ['./routes/*.js'],
+};
+
+const swaggerSpec = swaggerJSDoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the ShopZEE API');
-  });
+  res.send('Welcome to the ShopZEE API');
+});
 
 app.get('/api/debug/cookies', (req, res) => {
-    console.log('Cookies:', req.cookies);
-    res.json(req.cookies);
-  });
-  
-  
+  console.log('Cookies:', req.cookies);
+  res.json(req.cookies);
+});
+
+
 app.use('/api/users', userRoutes)
 app.use('/api/category', categoryRoutes)
 app.use('/api/products', productRoutes)
 app.use('/api/orders', orderRoutes)
 
 app.get('/api/config/paypal', (req, res) => {
-    res.send({clientId : process.env.PAYPAL_CLIENT_ID})
+  res.send({ clientId: process.env.PAYPAL_CLIENT_ID })
 })
 
 const __dirname = path.resolve();
 app.use('/api/upload', uploadRoutes)
 
 
-app.listen(port, ()=> console.log(`Server running on port ${port}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));

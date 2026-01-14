@@ -1,0 +1,210 @@
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\App.jsx
+  3:26  error  'toast' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\components\FormCategory.jsx
+  1:8   error  'React' is defined but never used              no-unused-vars
+  3:24  error  'value' is missing in props validation         react/prop-types
+  3:31  error  'setValue' is missing in props validation      react/prop-types
+  3:41  error  'handleSubmit' is missing in props validation  react/prop-types
+  3:55  error  'handleDelete' is missing in props validation  react/prop-types
+  3:69  error  'buttonText' is missing in props validation    react/prop-types
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\components\Header.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\components\Loader.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\components\Message.jsx
+   1:8   error  'React' is defined but never used                no-unused-vars
+   3:19  error  'variant' is missing in props validation         react/prop-types
+   3:28  error  'childComponent' is missing in props validation  react/prop-types
+   8:17  error  Unreachable code                                 no-unreachable
+  11:17  error  Unreachable code                                 no-unreachable
+  14:17  error  Unreachable code                                 no-unreachable
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\components\Model.jsx
+  1:8   error  'React' is defined but never used          no-unused-vars
+  5:17  error  'isOpen' is missing in props validation    react/prop-types
+  5:25  error  'onClose' is missing in props validation   react/prop-types
+  5:34  error  'children' is missing in props validation  react/prop-types
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\components\PrivateRoute.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\components\ProgressSteps.jsx
+  1:8   error  'React' is defined but never used       no-unused-vars
+  3:25  error  'step1' is missing in props validation  react/prop-types
+  3:32  error  'step2' is missing in props validation  react/prop-types
+  3:39  error  'step3' is missing in props validation  react/prop-types
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\components\ReviewModal.jsx
+  1:8   error  'React' is defined but never used           no-unused-vars
+  4:24  error  'onClose' is missing in props validation    react/prop-types
+  4:33  error  'onSubmit' is missing in props validation   react/prop-types
+  4:43  error  'isLoading' is missing in props validation  react/prop-types
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\main.jsx
+  1:8  error  'React' is defined but never used     no-unused-vars
+  2:8  error  'ReactDOM' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Auth\Login.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Auth\Navigation.jsx
+   1:8   error  'React' is defined but never used                   no-unused-vars
+  19:8   error  'Logo' is defined but never used                    no-unused-vars
+  35:10  error  'toggleSideBar' is assigned a value but never used  no-unused-vars
+  38:9   error  'closeSideBar' is assigned a value but never used   no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Auth\Register.jsx
+  1:8   error  'React' is defined but never used           no-unused-vars
+  7:10  error  'ToastContainer' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Home.jsx
+  1:8   error  'React' is defined but never used      no-unused-vars
+  2:10  error  'useParams' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Orders\Order.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Orders\PlaceOrder.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Orders\Shipping.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Products\FavouriteCounts.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Products\Favourites.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Products\HeartIcon.jsx
+   1:8   error    'React' is defined but never used                                                                            no-unused-vars
+   9:32  error    'FaVaadin' is defined but never used                                                                         no-unused-vars
+  12:23  error    'product' is missing in props validation                                                                     react/prop-types
+  15:64  error    'product._id' is missing in props validation                                                                 react/prop-types
+  22:8   warning  React Hook useEffect has a missing dependency: 'dispatch'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  29:53  error    'product._id' is missing in props validation                                                                 react/prop-types
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Products\Product.jsx
+   1:8   error  'React' is defined but never used                     no-unused-vars
+   9:20  error  'product' is missing in props validation              react/prop-types
+  21:47  error  'product._id' is missing in props validation          react/prop-types
+  23:38  error  'product.image' is missing in props validation        react/prop-types
+  24:38  error  'product.name' is missing in props validation         react/prop-types
+  36:47  error  'product._id' is missing in props validation          react/prop-types
+  38:66  error  'product.name' is missing in props validation         react/prop-types
+  40:39  error  'product.price' is missing in props validation        react/prop-types
+  47:30  error  'product.description' is missing in props validation  react/prop-types
+  53:49  error  'product._id' is missing in props validation          react/prop-types
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Products\ProductCards.jsx
+   1:8   error  'React' is defined but never used                               no-unused-vars
+  11:24  error  'product' is missing in props validation                        react/prop-types
+  18:34  error  'product.name' is missing in props validation                   react/prop-types
+  23:47  error  'product._id' is missing in props validation                    react/prop-types
+  26:34  error  'product.brand' is missing in props validation                  react/prop-types
+  29:38  error  'product.image' is missing in props validation                  react/prop-types
+  30:38  error  'product.name' is missing in props validation                   react/prop-types
+  43:34  error  'product.name' is missing in props validation                   react/prop-types
+  46:34  error  'product.price' is missing in props validation                  react/prop-types
+  54:31  error  'product.description' is missing in props validation            react/prop-types
+  54:44  error  'product.description.substring' is missing in props validation  react/prop-types
+  59:49  error  'product._id' is missing in props validation                    react/prop-types
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Products\ProductCarousil.jsx
+   1:8  error  'React' is defined but never used   no-unused-vars
+  16:8  error  'Loader' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Products\ProductDetails.jsx
+   1:8   error  'React' is defined but never used                         no-unused-vars
+  30:12  error  'userInfo' is assigned a value but never used             no-unused-vars
+  32:39  error  'loadsimilarProducts' is assigned a value but never used  no-unused-vars
+  33:38  error  'loadingReview' is assigned a value but never used        no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Products\SmallProducts.jsx
+   4:26  error  'product' is missing in props validation              react/prop-types
+   8:43  error  'product._id' is missing in props validation          react/prop-types
+  10:34  error  'product.image' is missing in props validation        react/prop-types
+  11:34  error  'product.name' is missing in props validation         react/prop-types
+  18:47  error  'product._id' is missing in props validation          react/prop-types
+  20:34  error  'product.name' is missing in props validation         react/prop-types
+  24:79  error  'product.description' is missing in props validation  react/prop-types
+  26:35  error  'product.price' is missing in props validation        react/prop-types
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\Shop.jsx
+   13:12  error    'categories' is assigned a value but never used                                                                                     no-unused-vars
+   25:8   warning  React Hook useEffect has a missing dependency: 'loadingCategories'. Either include it or remove the dependency array                react-hooks/exhaustive-deps
+   41:8   warning  React Hook useEffect has a missing dependency: 'filteredProductsQuery.isLoading'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  103:33  error    Missing "key" prop for element in iterator                                                                                          react/jsx-key
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\admin\AdminDashboard.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\admin\AdminMenu.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\admin\AdminRoutes.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\admin\AllProducts.jsx
+  1:8   error  'React' is defined but never used      no-unused-vars
+  1:17  error  'useEffect' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\admin\CategoryList.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\admin\OrderList.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\admin\ProductList.jsx
+  1:8   error  'React' is defined but never used      no-unused-vars
+  1:17  error  'useEffect' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\admin\UpdateProduct.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\admin\UserList.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\user\Cart.jsx
+  1:8   error  'React' is defined but never used      no-unused-vars
+  1:17  error  'useState' is defined but never used   no-unused-vars
+  7:8   error  'CartCount' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\user\CartCount.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\user\MyOrders.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\pages\user\Profile.jsx
+  1:8   error  'React' is defined but never used  no-unused-vars
+  3:10  error  'Link' is defined but never used   no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\redux\api\categoriesApiSlice.jsx
+  1:10  error  'BASE_URL' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\redux\api\usersApiSlice.js
+  2:10  error  'BASE_URL' is defined but never used  no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\src\redux\features\cart\cartSlice.js
+  14:20  error  'user' is assigned a value but never used        no-unused-vars
+  14:26  error  'rating' is assigned a value but never used      no-unused-vars
+  14:34  error  'reviews' is assigned a value but never used     no-unused-vars
+  14:43  error  'numReviews' is assigned a value but never used  no-unused-vars
+  32:29  error  'action' is defined but never used               no-unused-vars
+  47:32  error  'state' is assigned a value but never used       no-unused-vars
+
+C:\Users\ehira\Dropbox\My PC (LAPTOP-QA2KLA1I)\Desktop\ShopZEE\Frontend\vercel.js
+  2:15  error  Parsing error: Unexpected token :
+
+Γ£û 117 problems (114 errors, 3 warnings)
+

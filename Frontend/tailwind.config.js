@@ -6,7 +6,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        loginPageColor:  '#FDB4B4',
+        loginPageColor: '#FDB4B4',
+        'misty-blue': '#cfdbe6',
+        'deep-slate': '#0f172a',
       },
       fontFamily: {
         fantasy: ['fantasy'],

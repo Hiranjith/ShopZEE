@@ -32,12 +32,12 @@ const Home = () => {
                     </Message>
                 ) : (
                     <>
-                        <div className='bg-gray-400 flex justify-between items-center mt-10'>
-                            <h1 className='font-Qfantasy ml-[15rem] mt-[1rem] text-[3rem]'>
+                        <div className='flex flex-col lg:flex-row justify-between items-center mt-10 px-4'>
+                            <h1 className='font-Qfantasy text-[3rem] text-deep-slate lg:ml-[15rem] text-center lg:text-left'>
                                 Tops Picks
                             </h1>
 
-                            <Link to='/shopping' className='bg-red-600 font-bold rounded-full py-2 px-10 mr-[18rem] mt-[1rem]'>
+                            <Link to='/shopping' className='bg-deep-slate text-white font-bold rounded-full py-2 px-10 mt-4 lg:mt-[1rem] lg:mr-[18rem] hover:bg-slate-800 transition-colors'>
                                 Shop
                             </Link>
                         </div>

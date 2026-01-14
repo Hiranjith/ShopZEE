@@ -6,12 +6,12 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:4000', // Local backend server
+        target: 'https://shopzee-backend-ww3u.onrender.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '/api'),
       },
       '/uploads': {
-        target: 'http://localhost:4000',
+        target: 'https://shopzee-backend-ww3u.onrender.com',
         changeOrigin: true,
       },
     },

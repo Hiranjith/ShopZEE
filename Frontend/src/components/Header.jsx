@@ -1,5 +1,5 @@
 import React from 'react';
-import {useGetTopProductsQuery } from '../redux/api/productApiSlice';
+import { useGetTopProductsQuery } from '../redux/api/productApiSlice';
 import Loader from './Loader';
 import SmallProducts from '../pages/Products/SmallProducts';
 import ProductCarousil from '../pages/Products/ProductCarousil';
@@ -7,16 +7,16 @@ import ProductCarousil from '../pages/Products/ProductCarousil';
 
 const Header = () => {
 
-    const {data : products, isLoading, isError} = useGetTopProductsQuery();
+    const { data: products, isLoading, isError } = useGetTopProductsQuery();
 
     if (isLoading) {
         return <Loader />
     }
 
-    if(isError){
+    if (isError) {
         return <h2>Error</h2>
     }
-    
+
     return (
         <>
             <div className="flex justify-center items-start pt-20">
@@ -29,15 +29,15 @@ const Header = () => {
                         ))}
                     </div>
                 </div>
-                <div className='ml-5'>
-                <ProductCarousil />
+                <div className='lg:ml-5 md:ml-5 w-full lg:w-auto md:w-auto px-4 lg:px-0'>
+                    <ProductCarousil />
 
                 </div>
             </div>
         </>
     );
-    
-    
+
+
 }
 
 export default Header;

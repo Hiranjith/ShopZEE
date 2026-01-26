@@ -14,7 +14,10 @@ const AdminMenu = () => {
             {/* Toggle Button */}
             <button
                 onClick={onClickMenuButton}
-                className="text-white bg-blue-600 p-1.5 rounded-full fixed top-4 right-4 z-50 shadow-md hover:bg-blue-700"
+                className={`flex items-center justify-center p-2 rounded-lg z-50 fixed right-7 top-5
+                transition-all duration-300 transform 
+                ${isMenuOpen ? 'bg-deep-slate rotate-180 text-white' : 'bg-gray-900 text-white hover:bg-gray-800'}`}
+                style={{ top: '22px' }} /* Fine-tuned alignment */
             >
                 {isMenuOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
             </button>
@@ -22,23 +25,24 @@ const AdminMenu = () => {
             {/* Menu Section */}
             {isMenuOpen && (
                 <section
-                    className="bg-gradient-to-b from-gray-800 to-black text-white p-4 fixed right-4 top-16 w-52 
-                    rounded-md shadow-lg z-40 transition-all duration-300 ease-in-out"
+                    className="bg-deep-slate text-white p-4 fixed right-7 top-16 w-64 
+                    rounded-lg shadow-xl z-40 border border-gray-700
+                    transition-all duration-300 ease-in-out transform origin-top-right scale-100"
                 >
-                    <ul className="list-none space-y-3">
+                    <ul className="list-none space-y-2">
                         <li>
                             <NavLink
                                 to="/admin/categorylist"
                                 className={({ isActive }) =>
-                                    `flex items-center space-x-2 py-2 px-3 rounded-md text-sm font-medium 
-                                    transition-all duration-200 ${
-                                        isActive
-                                            ? 'bg-blue-600 text-white shadow-md'
-                                            : 'hover:bg-gray-700 hover:shadow-md text-gray-300'
+                                    `flex items-center space-x-3 py-3 px-4 rounded-lg text-sm font-medium 
+                                    transition-all duration-200 group ${isActive
+                                        ? 'bg-blue-600 text-white shadow-lg'
+                                        : 'hover:bg-slate-800 text-gray-300 hover:text-white'
                                     }`
                                 }
+                                onClick={() => setIsMenuOpen(false)}
                             >
-                                <FaThList />
+                                <FaThList className={({ isActive }) => isActive ? 'text-white' : 'text-gray-400 group-hover:text-white'} />
                                 <span>Create Category</span>
                             </NavLink>
                         </li>
@@ -46,15 +50,15 @@ const AdminMenu = () => {
                             <NavLink
                                 to="/admin/productlist"
                                 className={({ isActive }) =>
-                                    `flex items-center space-x-2 py-2 px-3 rounded-md text-sm font-medium 
-                                    transition-all duration-200 ${
-                                        isActive
-                                            ? 'bg-blue-600 text-white shadow-md'
-                                            : 'hover:bg-gray-700 hover:shadow-md text-gray-300'
+                                    `flex items-center space-x-3 py-3 px-4 rounded-lg text-sm font-medium 
+                                    transition-all duration-200 group ${isActive
+                                        ? 'bg-blue-600 text-white shadow-lg'
+                                        : 'hover:bg-slate-800 text-gray-300 hover:text-white'
                                     }`
                                 }
+                                onClick={() => setIsMenuOpen(false)}
                             >
-                                <FaProductHunt />
+                                <FaProductHunt className={({ isActive }) => isActive ? 'text-white' : 'text-gray-400 group-hover:text-white'} />
                                 <span>Create Product</span>
                             </NavLink>
                         </li>
@@ -62,15 +66,15 @@ const AdminMenu = () => {
                             <NavLink
                                 to="/admin/allproducts"
                                 className={({ isActive }) =>
-                                    `flex items-center space-x-2 py-2 px-3 rounded-md text-sm font-medium 
-                                    transition-all duration-200 ${
-                                        isActive
-                                            ? 'bg-blue-600 text-white shadow-md'
-                                            : 'hover:bg-gray-700 hover:shadow-md text-gray-300'
+                                    `flex items-center space-x-3 py-3 px-4 rounded-lg text-sm font-medium 
+                                    transition-all duration-200 group ${isActive
+                                        ? 'bg-blue-600 text-white shadow-lg'
+                                        : 'hover:bg-slate-800 text-gray-300 hover:text-white'
                                     }`
                                 }
+                                onClick={() => setIsMenuOpen(false)}
                             >
-                                <FaBox />
+                                <FaBox className={({ isActive }) => isActive ? 'text-white' : 'text-gray-400 group-hover:text-white'} />
                                 <span>All Products</span>
                             </NavLink>
                         </li>
@@ -78,15 +82,15 @@ const AdminMenu = () => {
                             <NavLink
                                 to="/admin/userslist"
                                 className={({ isActive }) =>
-                                    `flex items-center space-x-2 py-2 px-3 rounded-md text-sm font-medium 
-                                    transition-all duration-200 ${
-                                        isActive
-                                            ? 'bg-blue-600 text-white shadow-md'
-                                            : 'hover:bg-gray-700 hover:shadow-md text-gray-300'
+                                    `flex items-center space-x-3 py-3 px-4 rounded-lg text-sm font-medium 
+                                    transition-all duration-200 group ${isActive
+                                        ? 'bg-blue-600 text-white shadow-lg'
+                                        : 'hover:bg-slate-800 text-gray-300 hover:text-white'
                                     }`
                                 }
+                                onClick={() => setIsMenuOpen(false)}
                             >
-                                <FaUsers />
+                                <FaUsers className={({ isActive }) => isActive ? 'text-white' : 'text-gray-400 group-hover:text-white'} />
                                 <span>Manage Users</span>
                             </NavLink>
                         </li>
@@ -94,15 +98,15 @@ const AdminMenu = () => {
                             <NavLink
                                 to="/admin/orderlist"
                                 className={({ isActive }) =>
-                                    `flex items-center space-x-2 py-2 px-3 rounded-md text-sm font-medium 
-                                    transition-all duration-200 ${
-                                        isActive
-                                            ? 'bg-blue-600 text-white shadow-md'
-                                            : 'hover:bg-gray-700 hover:shadow-md text-gray-300'
+                                    `flex items-center space-x-3 py-3 px-4 rounded-lg text-sm font-medium 
+                                    transition-all duration-200 group ${isActive
+                                        ? 'bg-blue-600 text-white shadow-lg'
+                                        : 'hover:bg-slate-800 text-gray-300 hover:text-white'
                                     }`
                                 }
+                                onClick={() => setIsMenuOpen(false)}
                             >
-                                <FaClipboardList />
+                                <FaClipboardList className={({ isActive }) => isActive ? 'text-white' : 'text-gray-400 group-hover:text-white'} />
                                 <span>Manage Orders</span>
                             </NavLink>
                         </li>

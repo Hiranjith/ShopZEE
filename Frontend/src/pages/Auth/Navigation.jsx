@@ -38,6 +38,10 @@ function Navigation() {
   const closeSideBar = () => {
     setShowSideBar(false)
   }
+
+  const closeDropDown = () => {
+    setDropDownOpen(false)
+  }
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -77,29 +81,29 @@ function Navigation() {
 
         {/* Desktop Navigation Links (Center) */}
         <div className="hidden lg:flex items-center gap-8">
-          <Link to="/" className="flex items-center hover:text-gray-300 transition-colors">
+          <Link to="/" className="flex items-center hover:text-gray-300 transition-colors" onClick={closeDropDown}>
             <AiOutlineHome size={20} className="mr-2" />
             <span className="font-medium">HOME</span>
           </Link>
-          <Link to="/shopping" className="flex items-center hover:text-gray-300 transition-colors">
+          <Link to="/shopping" className="flex items-center hover:text-gray-300 transition-colors" onClick={closeDropDown}>
             <AiOutlineShopping size={20} className="mr-2" />
             <span className="font-medium">SHOPPING</span>
           </Link>
-          <Link to="/cart" className="flex items-center hover:text-gray-300 transition-colors relative">
+          <Link to="/cart" className="flex items-center hover:text-gray-300 transition-colors relative" onClick={closeDropDown}>
             <AiOutlineShoppingCart size={20} className="mr-2" />
             <span className="font-medium">CART</span>
             <div className="absolute -top-2 -right-2">
               <CartCount />
             </div>
           </Link>
-          <Link to="/favourite" className="flex items-center hover:text-gray-300 transition-colors relative">
+          <Link to="/favourite" className="flex items-center hover:text-gray-300 transition-colors relative" onClick={closeDropDown}>
             <FaHeart size={20} className="mr-2" />
             <span className="font-medium">FAVOURITE</span>
             <div className="absolute -top-2 -right-2">
               <FavouriteCounts />
             </div>
           </Link>
-          <Link to="/orders" className="flex items-center hover:text-gray-300 transition-colors">
+          <Link to="/orders" className="flex items-center hover:text-gray-300 transition-colors" onClick={closeDropDown}>
             <FaReceipt size={20} className="mr-2" />
             <span className="font-medium">My Orders</span>
           </Link>
@@ -108,7 +112,7 @@ function Navigation() {
 
         <div className="flex items-center space-x-4 relative">
           {userInfo ? (
-            <div className="relative">
+            <div className={`relative ${userInfo.isAdmin ? "mr-14" : ""}`}>
               <button
                 onClick={toggleDropDown}
                 className="flex items-center text-white hover:underline focus:outline-none mr-4"
@@ -142,6 +146,7 @@ function Navigation() {
                         <Link
                           to="/admin/dashboard"
                           className="block px-4 py-2 hover:bg-slate-800"
+                          onClick={closeDropDown}
                         >
                           Dashboard
                         </Link>
@@ -150,6 +155,7 @@ function Navigation() {
                         <Link
                           to="/admin/allproducts"
                           className="block px-4 py-2 hover:bg-slate-800"
+                          onClick={closeDropDown}
                         >
                           Products
                         </Link>
@@ -158,6 +164,7 @@ function Navigation() {
                         <Link
                           to="/admin/categorylist"
                           className="block px-4 py-2 hover:bg-slate-800"
+                          onClick={closeDropDown}
                         >
                           Category
                         </Link>
@@ -166,6 +173,7 @@ function Navigation() {
                         <Link
                           to="/admin/orderlist"
                           className="block px-4 py-2 hover:bg-slate-800"
+                          onClick={closeDropDown}
                         >
                           Orders
                         </Link>
@@ -174,6 +182,7 @@ function Navigation() {
                         <Link
                           to="/admin/userslist"
                           className="block px-4 py-2 hover:bg-slate-800"
+                          onClick={closeDropDown}
                         >
                           Users
                         </Link>
@@ -184,6 +193,7 @@ function Navigation() {
                     <Link
                       to="/profile"
                       className="block px-4 py-2 hover:bg-slate-800"
+                      onClick={closeDropDown}
                     >
                       Profile
                     </Link>

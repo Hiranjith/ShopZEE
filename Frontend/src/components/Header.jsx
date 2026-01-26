@@ -20,7 +20,7 @@ const Header = () => {
     return (
         <>
             <div className="flex justify-center items-start pt-20">
-                <div className="xl:block lg:hidden md:hidden sm:hidden">
+                <div className="hidden xl:block">
                     <div className="grid lg:w-[30rem] grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                         {products.slice(0, 4).map((product) => (
                             <div key={product._id}>

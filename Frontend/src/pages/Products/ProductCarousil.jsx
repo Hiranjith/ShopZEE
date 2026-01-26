@@ -61,8 +61,8 @@ const ProductCarousil = () => {
                   className="w-full rounded-lg object-cover h-[20.8rem]"
                 />
               </Link>
-              <div className="mt-4 flex justify-between text-sm"> {/* Reduced font size */}
-                <div className="w-[12rem]">
+              <div className="mt-4 flex flex-col lg:flex-row xl:flex-row md:flex-row justify-between text-sm gap-2"> {/* Responsive flex direction and gap */}
+                <div className="w-full lg:w-[12rem]">
                   <h2 className="text-base font-semibold">{name}</h2>
                   <p className="text-sm">₹ {price}</p>
                   <p className="mt-2">{description.substring(0, 60)}...</p> {/* Reduced description */}

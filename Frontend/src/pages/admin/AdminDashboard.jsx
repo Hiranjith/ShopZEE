@@ -56,7 +56,7 @@ const AdminDashboard = () => {
         <>
             <AdminMenu />
 
-            <section className="container mx-auto px-4 xl:px-20 mt-10">
+            <section className="container mx-auto px-4 xl:px-20 pt-20">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div className="rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 flex flex-col items-center shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <div className="bg-white p-3 rounded-full mb-4">
